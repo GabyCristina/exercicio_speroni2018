@@ -32,3 +32,4 @@ print_r($prod->getProdutos());
 echo "\n --- \n";
 
 print_r($prod->getProduto(8));
+

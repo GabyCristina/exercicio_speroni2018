@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Created by PhpStorm.
+ * User: aluno
+ * Date: 28/02/18
+ * Time: 13:38
+ */
 
 require_once "Conexao.php";
 require_once "Categoria.php";
@@ -15,6 +20,7 @@ class CategoriaCrud
     }
 
     public function getCategorias(){
+
         $sql = "SELECT * FROM categoria";
 
         $categorias = $this->conexao->query($sql);
@@ -32,9 +38,7 @@ class CategoriaCrud
 
             $listaCategorias[] = $cat;
         }
-
-
-
+        
 
         return $listaCategorias;
     }
@@ -53,29 +57,18 @@ class CategoriaCrud
         $cat->setNome($categoria['nome_categoria']);
 
 
-        return $categoria;
-
+        return $cat;
     }
-    public function insertCategoria ($categoria){
-        $sql = "INSERT INTO categoria VALUES ";
+
+    public function insertCategoria(Categoria $categoria){
+        $nome = $categoria->getNome();
+        $descricao = $categoria->getDescricao();
+        $sql = "insert into categoria (nome_categoria, descricao_categoria) values ('$nome', '$descricao')";
 
         $this->conexao->exec($sql);
-    }
-    public function updateCategoria ($categoria){
-        $sql = "UPDATE categoria SET categoria = $categoria";
-        $this->conexao->exec($sql);
-    }
 
     }
-
-    public function excluirProduto($id){
-        $sql = "DELETE FROM categoria WHERE id_categoria  = $id";
-        $this->conexao->exec($sql);
-    }
-
-
 }
-
 
 
 

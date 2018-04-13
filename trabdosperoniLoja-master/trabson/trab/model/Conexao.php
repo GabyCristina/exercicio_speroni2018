@@ -1,13 +1,12 @@
 <?php
 
-
 class Conexao {
     const HOST      = "localhost";
     const NOMEBANCO = "3info2";
     const USUARIO   = "3info2";
     const SENHA     = "3info2";
 
-
+    //!!!Substitua daqui para baixo
     public static $conexao = null;
     public static function getConexao(){
 
