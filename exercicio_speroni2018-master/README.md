@@ -1,1 +1,0 @@
-# exercicio_speroni2018
